@@ -35,7 +35,7 @@
 #endif
 
 #include <kbUtilities.h>
-#include <bsp/Ethernet/EthernetInterface.h>
+#include <bsp/ethernet/EthernetInterface.h>
 
 typedef enum
 {

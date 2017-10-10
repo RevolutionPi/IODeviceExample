@@ -31,7 +31,7 @@
 #include <project.h>
 #include <common_define.h>
 
-#include <bsp\gpio\gpio.h>
+#include <bsp/gpio/gpio.h>
 
 #include <PiBridgeSlave.h>
 
@@ -43,7 +43,7 @@ INT8U PIBS_DBG_output1B_g;
 INT8U PIBS_DBG_output2_g;
 
 //*************************************************************************************************
-//| Function: 
+//| Function:
 //|
 //! \brief
 //! set output for Sniff 1A Pin
@@ -83,7 +83,7 @@ void PIBS_WriteSniff1A (
 }
 
 //*************************************************************************************************
-//| Function: 
+//| Function:
 //|
 //! \brief
 //! set output for Sniff 1B Pin
@@ -123,7 +123,7 @@ void PIBS_WriteSniff1B (
 }
 
 //*************************************************************************************************
-//| Function: 
+//| Function:
 //|
 //! \brief
 //! set output for Sniff 2 Pin
@@ -164,7 +164,7 @@ void PIBS_WriteSniff2 (
 
 
 //*************************************************************************************************
-//| Function: 
+//| Function:
 //|
 //! \brief
 //!
@@ -182,7 +182,7 @@ INT8U PIBS_ReadSniff1A (
 }
 
 //*************************************************************************************************
-//| Function: 
+//| Function:
 //|
 //! \brief
 //!
@@ -200,7 +200,7 @@ INT8U PIBS_ReadSniff1B (
 }
 
 //*************************************************************************************************
-//| Function: 
+//| Function:
 //|
 //! \brief
 //!

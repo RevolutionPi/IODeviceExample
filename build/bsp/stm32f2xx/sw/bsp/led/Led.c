@@ -40,9 +40,9 @@
 #endif
 
 #include <bsp/bspConfig.h>
-#include <bsp/led/led.h>
-#include <Syslib/inc/stm32f2xx.h>
-#include <bsp/led/ledIntern.h>
+#include <bsp/led/Led.h>
+#include <SysLib/inc/stm32f2xx.h>
+#include <bsp/led/LedIntern.h>
 
 #ifdef STM_LED_GPIO
 #include <bsp/gpio/gpio.h>
@@ -212,7 +212,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_0_G_PIN,
         1,
@@ -241,7 +241,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_1_R_PIN,
         1,
@@ -266,7 +266,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_1_G_PIN,
         1,
@@ -295,7 +295,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_2_R_PIN,
         1,
@@ -320,7 +320,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_2_G_PIN,
         1,
@@ -349,7 +349,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_3_R_PIN,
         1,
@@ -374,7 +374,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_3_G_PIN,
         1,
@@ -404,7 +404,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_4_R_PIN,
         1,
@@ -429,7 +429,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_4_G_PIN,
         1,
@@ -458,7 +458,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_5_R_PIN,
         1,
@@ -483,7 +483,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_5_G_PIN,
         1,
@@ -493,7 +493,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
 #endif
 
 #if (LED_MAX_DUAL_LED >= 7)
-    {   //[12] 
+    {   //[12]
         LED_ST_ALL_OFF,
         0x0000,
         0x0001,
@@ -511,7 +511,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_6_R_PIN,
         1,
@@ -536,7 +536,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_6_G_PIN,
         1,
@@ -564,7 +564,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_7_R_PIN,
         1,
@@ -589,7 +589,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_7_G_PIN,
         1,
@@ -616,7 +616,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_8_R_PIN,
         1,
@@ -641,7 +641,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_8_G_PIN,
         1,
@@ -668,7 +668,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_9_R_PIN,
         1,
@@ -693,7 +693,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_9_G_PIN,
         1,
@@ -721,7 +721,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_10_R_PIN,
         1,
@@ -746,7 +746,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif        
+  #endif
 #endif
         LED_10_G_PIN,
         1,
@@ -775,7 +775,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
 #endif
-  #endif        
+  #endif
         LED_11_R_PIN,
         1,
         1,
@@ -799,7 +799,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-  #endif     
+  #endif
 #endif
         LED_11_G_PIN,
         1,
@@ -828,7 +828,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
 #endif
-#endif        
+#endif
         LED_12_R_PIN,
         1,
         1,
@@ -852,7 +852,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-#endif     
+#endif
 #endif
         LED_12_G_PIN,
         1,
@@ -881,7 +881,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
 #endif
-#endif        
+#endif
         LED_13_R_PIN,
         1,
         1,
@@ -905,7 +905,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-#endif     
+#endif
 #endif
         LED_13_G_PIN,
         1,
@@ -934,7 +934,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
 #endif
-#endif        
+#endif
         LED_14_R_PIN,
         1,
         1,
@@ -958,7 +958,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-#endif     
+#endif
 #endif
         LED_14_G_PIN,
         1,
@@ -987,7 +987,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
 #endif
-#endif        
+#endif
         LED_15_R_PIN,
         1,
         1,
@@ -1011,7 +1011,7 @@ LED_TLed LED_atLed_g[LED_MAX_DUAL_LED * 2] =
         NULL,
         NULL,
         NULL,
-#endif     
+#endif
 #endif
         LED_15_G_PIN,
         1,
@@ -1042,7 +1042,7 @@ INT32U LED_initLed ( void )    //! \return  success of operation
     {
       if (LED_atLed_g[i16uI_l].ptGPIO)
       {
-        GPIO_InitStructure.GPIO_Pin = LED_atLed_g[i16uI_l].i16uLedBit; 
+        GPIO_InitStructure.GPIO_Pin = LED_atLed_g[i16uI_l].i16uLedBit;
         GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
         GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
         kbGPIO_InitCLK(LED_atLed_g[i16uI_l].ptGPIO, &GPIO_InitStructure);
@@ -1050,7 +1050,7 @@ INT32U LED_initLed ( void )    //! \return  success of operation
       }
     }
 #endif
-    
+
     // switch off all LEDs
     for (i16uI_l = 0; i16uI_l < LED_MAX_DUAL_LED; i16uI_l++)
     {
@@ -1091,7 +1091,7 @@ void LED_setLed (
         {
 
             bReadSw_g = bTRUE; // Prevent systick interrupts from modifying the i16uMask while we are in this function.
-        
+
             // 1. Handle red LED
             LED_atLed_g[i8uIndex_l].i16uMask = 1;      // Reset shifter
             LED_atLed_g[i8uIndex_l].i8uPreScale = 1;   // Reset downcounter
@@ -1356,7 +1356,7 @@ void LED_setLed (
                         }
                     }
                 }   break;
-                
+
                 case LED_ST_GREEN_ON:
                 {
                     LED_atLed_g[i8uIndex_l].bBlink = bFALSE;
@@ -1371,7 +1371,7 @@ void LED_setLed (
                         LED_i16uLedVariable_g |= (LED_atLed_g[i8uIndex_l].i16uLedBit); // set bit
                     }
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_50:
                 {
                     // 10Hz Blinker: On(50ms), Off(50ms)
@@ -1380,7 +1380,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 1;
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_150:
                 {
                     // 3.3Hz Blinker: On(150ms), Off(150ms)
@@ -1389,7 +1389,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 3;    // Stepsize: 3*50ms=150ms (period=300ms)
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_150_R:
                 {
                     // 3.3Hz Blinker: Off(150ms), On(150ms)
@@ -1410,7 +1410,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 4;
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_200_R:
                 {
                     // 2.5Hz Blinker: On(200ms), Off(200ms)
@@ -1419,7 +1419,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 4;
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_250:
                 {
                     // 2Hz Blinker: On(250ms), Off(250ms)
@@ -1428,7 +1428,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 5;
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_250_R:
                 {
                     // 2Hz Blinker: Off(250ms), On(250ms)
@@ -1437,7 +1437,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 5;
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_500:
                 {
                     // 1Hz Blinker: On(500ms), Off(500ms)
@@ -1446,7 +1446,7 @@ void LED_setLed (
                     LED_atLed_g[i8uIndex_l].i8uMaxPreScale = 10;
                     LED_atLed_g[i8uIndex_l].bBlink = bTRUE;
                 }   break;
-                
+
                 case LED_ST_GREEN_BLINK_500_R:
                 {
                     // 1Hz Blinker: Off(500ms), On(500ms)
@@ -1598,22 +1598,22 @@ LED_EState getLedState (
 void LED_modifyLed(
         INT8U       i8uLedNr_p,		//!< [in] index of the dual color LED
         LED_EState	enLedMask_p,	//!< [in] type of the dual color LED
-        LED_EState  enState_p		//!< [in] combined state of the dual color LED 
+        LED_EState  enState_p		//!< [in] combined state of the dual color LED
     )
 {
     LED_EState  enState_l;
-    
+
     if(LED_ST_RED_MASK & enLedMask_p)
     {
         //get current LED states ...
         enState_l = getLedState( i8uLedNr_p );
-        
+
         //Keep green LED settings ...
         enState_l &= LED_ST_GREEN_MASK;
-        
+
         //Overwrite red LED settings ...
         enState_l |= enState_p;
-        
+
         //apply settings ...
         LED_setLed( i8uLedNr_p, enState_l);
 
@@ -1622,20 +1622,20 @@ void LED_modifyLed(
     {
         //get current LED states ...
         enState_l = getLedState( i8uLedNr_p );
-        
+
         //Keep red LED settings ...
         enState_l &= LED_ST_RED_MASK;
-        
+
         //Overwrite green LED settings ...
         enState_l |= enState_p;
-        
+
         //apply settings ...
         LED_setLed( i8uLedNr_p, enState_l);
     }
     else //RED+GREEN
     {
         //overwrite both of them ...
-        LED_setLed(i8uLedNr_p, enState_p);	
+        LED_setLed(i8uLedNr_p, enState_p);
     }
 }
 
@@ -1644,8 +1644,8 @@ void LED_modifyLed(
 //+=============================================================================================
 //|		Function:	LED_systick
 //+---------------------------------------------------------------------------------------------
-//!		
-//!     
+//!
+//!
 //+---------------------------------------------------------------------------------------------
 //|		Conditions:
 //!		\pre	(pre-condition)
@@ -1691,7 +1691,7 @@ void LED_systick()
 #endif
                             {
                                 LED_i16uLedVariable_g |= ptLed_l->i16uLedBit;
-                            }    
+                            }
                         }
                         else
                         {
@@ -1713,10 +1713,10 @@ void LED_systick()
                         {
                             ptLed_l->i16uMask = 1;
                         }
-                    }    
+                    }
                 }
             }
-            
+
             // reset counter for 50ms
             i32uLedClk_s -= 50;
         }

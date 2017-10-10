@@ -1,10 +1,10 @@
 /**
   ******************************************************************************
-  * @file    EEPROM_Emulation/inc/eeprom.h 
+  * @file    EEPROM_Emulation/inc/eeprom.h
   * @author  MCD Application Team
   * @version V3.1.0
   * @date    07/27/2009
-  * @brief   This file contains all the functions prototypes for the EEPROM 
+  * @brief   This file contains all the functions prototypes for the EEPROM
   *          emulation firmware library.
   ******************************************************************************
   * @copy
@@ -25,15 +25,15 @@
 
 /* Includes ------------------------------------------------------------------*/
 #ifdef STM32F2XX
-#include <SysLib\inc\stm32f2xx.h>
+#include <SysLib/inc/stm32f2xx.h>
 #else
-#include <syslib\CM3\stm32f10x.h>
+#include <SysLib/CM3/stm32f10x.h>
 #endif
 
 
 #if defined (STM_WITH_EEPROM_ADDR16)     // use 16 bit address
 
-#define MAX_EEPROM_ADDRESS      850     /* A Maximum of 850 address values in the  EEPROM are supported. 
+#define MAX_EEPROM_ADDRESS      850     /* A Maximum of 850 address values in the  EEPROM are supported.
                                         This value could be much higher, but then the page transfer will be slower. */
 #define EEPROM_ADDRESS_MASK     0x0000ffff
 #define EEPROM_ADDRESS_BITS     16
@@ -74,7 +74,7 @@ typedef INT16U      EEPROM_INTERNAL_TYPE;
 
 #if !defined (PAGE_SIZE)
     #error "Define processor category"
-#endif    
+#endif
 
 
 

@@ -1,6 +1,6 @@
 /**
 ******************************************************************************
-* @file    EEPROM_Emulation/src/eeprom.c 
+* @file    EEPROM_Emulation/src/eeprom.c
 * @author  MCD Application Team
 * @version V3.1.0
 * @date    07/27/2009
@@ -16,24 +16,24 @@
 * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
 *
 * <h2><center>&copy; COPYRIGHT 2009 STMicroelectronics</center></h2>
-*/ 
+*/
 /** @addtogroup EEPROM_Emulation
 * @{
-*/ 
+*/
 
 /* Includes ------------------------------------------------------------------*/
 #include <common_define.h>
 #include <project.h>
-#include <bsp\bspConfig.h>
+#include <bsp/bspConfig.h>
 
 #if !defined(STM_WITH_EEPROM_ADDR16)
   #error For STM32F2XX only the mode STM_WITH_EEPROM_ADDR16 can be used.
 #endif
 
-#include <bsp\eeprom\eeprom.h>
-#include "bsp\eeprom\eeprom_intern.h"
-#include <bsp\flash\FlashDriver.h>
-#include <bsp\bspError.h>
+#include <bsp/eeprom/eeprom.h>
+#include "bsp/eeprom/eeprom_intern.h"
+#include <bsp/flash/FlashDriver.h>
+#include <bsp/bspError.h>
 
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,13 +54,13 @@ static INT32U BSP_EEPROM_WriteVariable (INT16U i16uVirtAddress_p, INT8U i8uData_
 /**
 * @brief  Restore the pages to a known good state in case of page's status
 *   corruption after a power loss.
-* 
+*
 * @retval - Flash error code: on write Flash error
 *         - FLASH_COMPLETE: on success
 */
 void BSP_EEPROM_init (void)
 {
-    EEPROM_INTERNAL_TYPE iuPageStatus0_l; 
+    EEPROM_INTERNAL_TYPE iuPageStatus0_l;
     EEPROM_INTERNAL_TYPE iuPageStatus1_l;
     INT8U     iuDataVar_l;
 
@@ -100,7 +100,7 @@ void BSP_EEPROM_init (void)
         /* Erase both Page0 and Page1 and set Page0 as valid page */
         BSP_EEPROM_Format();
     }
-    
+
     iuDataVar_l = BSP_EEPROM_readByte (BSP_EEPROM_ADDR (i8uInitMarker));
     if (iuDataVar_l != 'M')
     {   // Init EEPROM with Default values
@@ -119,11 +119,11 @@ void BSP_EEPROM_init (void)
 *           - NO_VALID_PAGE: if no valid page was found.
 */
 INT32U BSP_EEPROM_ReadVariable (
-    INT16U i16uVirtAddress_p, 
+    INT16U i16uVirtAddress_p,
     INT8U* pi8uData_p)
 {
     INT32U i32uRv_l = BSPE_EE_VAR_NOT_EXIST;
-    EEPROM_INTERNAL_TYPE *piuAddress_l; 
+    EEPROM_INTERNAL_TYPE *piuAddress_l;
     EEPROM_INTERNAL_TYPE *piuPageStartAddress_l;
 
     if (i16uVirtAddress_p > MAX_EEPROM_ADDRESS)
@@ -174,7 +174,7 @@ INT32U BSP_EEPROM_ReadVariable (
 */
 INT32U BSP_EEPROM_WriteVariable(INT16U i16uVirtAddress_p, INT8U i8uData_p)
 {
-    INT32U i32uRv_l;  
+    INT32U i32uRv_l;
 
     if (i16uVirtAddress_p > MAX_EEPROM_ADDRESS)
     {
@@ -289,7 +289,7 @@ static EEPROM_INTERNAL_TYPE *BSP_EEPROM_FindValidPage (INT8U i8uOperation_p)
     default:
         break;             /* Option Invalid */
     }
-    
+
     return (iuRetVal_l);
 }
 
@@ -305,7 +305,7 @@ static EEPROM_INTERNAL_TYPE *BSP_EEPROM_FindValidPage (INT8U i8uOperation_p)
 */
 static INT32U BSP_EEPROM_VerifyPageFullWriteVariable(INT16U i16uVirtAddress_p, INT8U i8uData_p)
 {
-    EEPROM_INTERNAL_TYPE *piuAddress_l; 
+    EEPROM_INTERNAL_TYPE *piuAddress_l;
     EEPROM_INTERNAL_TYPE *piuPageEndAddress_l;
     EEPROM_INTERNAL_TYPE iuAddressValue_l;
 
@@ -328,7 +328,7 @@ static INT32U BSP_EEPROM_VerifyPageFullWriteVariable(INT16U i16uVirtAddress_p, I
 
     iuAddressValue_l =  (i8uData_p << EEPROM_ADDRESS_BITS) | i16uVirtAddress_p;
 
-    piuAddress_l++;  // Skip Page marker    
+    piuAddress_l++;  // Skip Page marker
     /* Check each active page address starting from beginning */
     for (;piuAddress_l <= piuPageEndAddress_l; piuAddress_l++)
     {
@@ -361,7 +361,7 @@ static INT32U BSP_EEPROM_PageTransfer (INT16U i16uVirtAddress_p, INT8U i8uData_p
     INT32U i32uRv_l;
     EEPROM_INTERNAL_TYPE *piuNewPage_l;
     EEPROM_INTERNAL_TYPE *piuOldPage_l;
-    EEPROM_INTERNAL_TYPE *piuValidPage_l; 
+    EEPROM_INTERNAL_TYPE *piuValidPage_l;
     INT16U i16uVarIdx_l;
     EEPROM_INTERNAL_TYPE iuVal_l;
     INT8U iuData_l;
@@ -427,7 +427,7 @@ static INT32U BSP_EEPROM_PageTransfer (INT16U i16uVirtAddress_p, INT8U i8uData_p
     BSP_FLASH_eraseBlock((void *)piuOldPage_l);
 
     /* Set new Page status to VALID_PAGE status */
-    iuVal_l = VALID_PAGE; 
+    iuVal_l = VALID_PAGE;
     BSP_FLASH_write((void *)piuNewPage_l, &iuVal_l, sizeof (iuVal_l));
 
     /* if we reach this point, everything is ok */
@@ -436,7 +436,7 @@ static INT32U BSP_EEPROM_PageTransfer (INT16U i16uVirtAddress_p, INT8U i8uData_p
 
 /**
 * @}
-*/ 
+*/
 
 //*************************************************************************************************
 //| Function: BSP_EEPROM_readByte
@@ -451,9 +451,9 @@ static INT32U BSP_EEPROM_PageTransfer (INT16U i16uVirtAddress_p, INT8U i8uData_p
 //-------------------------------------------------------------------------------------------------
 INT8U BSP_EEPROM_readByte (
     INT16U i16uVirtAddress_p) //!< [in]  Virtual Adress inside EEPROM simulated storage
-                            //! \return Value of byte; if invalid address or byte not store 0xff 
+                            //! \return Value of byte; if invalid address or byte not store 0xff
                             //! as default value is used
-                            
+
 {
 
     INT8U iuRv_l;
@@ -465,7 +465,7 @@ INT8U BSP_EEPROM_readByte (
         iuRv_l = 0xff;
     }
 
-    return (iuRv_l);    
+    return (iuRv_l);
 }
 
 //*************************************************************************************************
@@ -481,9 +481,9 @@ INT8U BSP_EEPROM_readByte (
 //-------------------------------------------------------------------------------------------------
 INT16U BSP_EEPROM_readWord (
     INT16U i16uVirtAddress_p) //!< [in]  Virtual Adress inside EEPROM simulated storage
-                            //! \return Value of DW; if invalid address or byte not store 0xffffffff 
+                            //! \return Value of DW; if invalid address or byte not store 0xffffffff
                             //! as default value is used
-                            
+
 {
     INT16U i;
     INT16U i16uData_l;
@@ -516,9 +516,9 @@ INT16U BSP_EEPROM_readWord (
 //-------------------------------------------------------------------------------------------------
 INT32U BSP_EEPROM_readDWord (
     INT16U i16uVirtAddress_p) //!< [in]  Virtual Adress inside EEPROM simulated storage
-                            //! \return Value of DW; if invalid address or byte not store 0xffffffff 
+                            //! \return Value of DW; if invalid address or byte not store 0xffffffff
                             //! as default value is used
-                            
+
 {
     INT16U i;
     INT32U i32uData_l;
@@ -555,19 +555,19 @@ void BSP_EEPROM_writeByte (
 {
     INT32U i32uErr_l;
     INT8U i8uDataStored_l;
-    
+
     BSP_ASSERT (i16uVirtAddress_p < sizeof (BSP_EEPROM_TLayout), BSPE_EE_WR_BYTE_ADR_OUT_OF_RANGE);
 
     i32uErr_l = BSP_EEPROM_ReadVariable(i16uVirtAddress_p, &i8uDataStored_l);
     if (   (i32uErr_l != BSPE_NO_ERROR)
         || (i8uDataStored_l != i8uData_p)
-       ) 
+       )
     {
         i32uErr_l = BSP_EEPROM_WriteVariable(i16uVirtAddress_p, i8uData_p);
         BSP_ASSERT (i32uErr_l == BSPE_NO_ERROR, i32uErr_l);
-    }    
-    
-}                                
+    }
+
+}
 
 
 //*************************************************************************************************
@@ -592,7 +592,7 @@ void BSP_EEPROM_writeWord (
     INT32U i32uErr_l;
     INT16U i16uDataStored_l;
     INT16U i;
-    
+
     BSP_ASSERT (i16uVirtAddress_p < sizeof (BSP_EEPROM_TLayout), BSPE_EE_WR_WORD_ADR_OUT_OF_RANGE);
 
     i16uDataStored_l = BSP_EEPROM_readWord (i16uVirtAddress_p);
@@ -628,7 +628,7 @@ void BSP_EEPROM_writeDWord (
     INT32U i32uErr_l;
     INT32U i32uDataStored_l;
     INT16U i;
-    
+
     BSP_ASSERT (i16uVirtAddress_p < sizeof (BSP_EEPROM_TLayout), BSPE_EE_WR_DWORD_ADR_OUT_OF_RANGE);
 
     i32uDataStored_l = BSP_EEPROM_readDWord (i16uVirtAddress_p);
@@ -655,7 +655,7 @@ void BSP_EEPROM_writeDWord (
 //-------------------------------------------------------------------------------------------------
 INT8U BSP_EEPROM_getDefaultData (
     INT16U i16uVirtAddress_p)
-    
+
 {
     INT16U i16uInd_l;
     INT8U *pi8uData_l;
@@ -664,20 +664,20 @@ INT8U BSP_EEPROM_getDefaultData (
 
     for (i16uInd_l = 0; BSP_EEPROM_atDefaultRef[i16uInd_l].vpSrc != ((void *)0); i16uInd_l++)
     {
-        const BSP_EEPROM_TDefaultRef *ptRef_l = &BSP_EEPROM_atDefaultRef[i16uInd_l]; 
-    
+        const BSP_EEPROM_TDefaultRef *ptRef_l = &BSP_EEPROM_atDefaultRef[i16uInd_l];
+
         if (   (i16uVirtAddress_p >= ptRef_l->i16uEepromAddr)
             && (i16uVirtAddress_p < ptRef_l->i16uEepromAddr + ptRef_l->i16uLen)
-           ) 
+           )
         {
             pi8uData_l = (INT8U *)ptRef_l->vpSrc + i16uVirtAddress_p - ptRef_l->i16uEepromAddr;
             return (*pi8uData_l);
-        }   
+        }
     }
-    
+
     pi8uData_l = (INT8U *)&BSP_EEPROM_ctDefaultValue + i16uVirtAddress_p;
     return (*pi8uData_l);
-}    
+}
 
 
 //*************************************************************************************************
@@ -693,23 +693,23 @@ INT8U BSP_EEPROM_getDefaultData (
 //-------------------------------------------------------------------------------------------------
 void BSP_EEPROM_factoryReset (
     void)
-    
+
 {
 
     INT16U i16uInd_l;
     INT8U i8uData_l;
     INT32U i32uErr_l;
- 
+
     i32uErr_l = BSP_EEPROM_Format ();
     BSP_ASSERT (i32uErr_l == BSPE_NO_ERROR, BSPE_EE_FORMAT_FACTORY_RESET);
- 
+
     for (i16uInd_l = 0; i16uInd_l < sizeof (BSP_EEPROM_TLayout); i16uInd_l++)
     {
-        i8uData_l = BSP_EEPROM_getDefaultData (i16uInd_l);  
-        BSP_EEPROM_writeByte (i16uInd_l, i8uData_l);  
+        i8uData_l = BSP_EEPROM_getDefaultData (i16uInd_l);
+        BSP_EEPROM_writeByte (i16uInd_l, i8uData_l);
     }
     BSP_EEPROM_writeByte (BSP_EEPROM_ADDR (i8uInitMarker), 'M');
-}    
+}
 
 //*************************************************************************************************
 

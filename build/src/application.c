@@ -26,11 +26,11 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 *
-*============================================================================================= 
+*=============================================================================================
 */
 
 #include <project.h>
-#include <bsp/led/led.h>
+#include <bsp/led/Led.h>
 
 TBOOL bLedBlocked_g = bFALSE;
 
@@ -55,7 +55,7 @@ void APPL_set_allLED( INT8U i8uSwitchLed_p)
     switch(i8uSwitchLed_p)
     {
     case 1://set all green
-        { 
+        {
             LED_setLed(0, LED_ST_GREEN_ON);
             LED_setLed(1, LED_ST_GREEN_ON);
             LED_setLed(2, LED_ST_GREEN_ON);

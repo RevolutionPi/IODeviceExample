@@ -32,7 +32,7 @@
 #define PLATFORMERROR_H_INC
 
 #include <stdarg.h>
-#include <bsp\setjmp\BspSetJmp.h>
+#include <bsp/setjmp/BspSetJmp.h>
 
 //+=============================================================================================
 //|     Konstanten / constants
@@ -73,7 +73,7 @@
 #define CMN_RTC_MMSIM_INTERN2                   0x02000003      //!< default reached
 #define CMN_RTC_MMSIM_INTERN3                   0x02000004      //!< default reached
 #define CMN_RTC_MMSIM_CAN_MEM1                  0x02000005      //!< no mem
-#define CMN_RTC_MMSIM_INTERN4                   0x02000006      //!< 
+#define CMN_RTC_MMSIM_INTERN4                   0x02000006      //!<
 
 #define CMN_RTC_CCD_CAN_MEM1                    0x02000007      //!< no mem
 #define CMN_RTC_PET_CAN_MEM1                    0x02000008      //!< no mem
@@ -87,7 +87,7 @@
 
 // DPR
 #define CMN_DPR_MBOX_INTERN1                    0x02060101      //!< mailbox does not support fragmented packets yet
-#define CMN_DPR_MBOX_UNKNOWN_TYPE               0x02060102      //!< unknown packet type in mailbox 
+#define CMN_DPR_MBOX_UNKNOWN_TYPE               0x02060102      //!< unknown packet type in mailbox
 
 #define CMN_DPR_ERROR_BASE                      0x0206f000      //!< Base for error codes sent to the base board
 #define CMN_DPR_ERROR_END                       0x0206ffff      //!< End of Base for error codes sent to the base board
@@ -114,8 +114,8 @@
 //+=============================================================================================
 
 #ifdef __cplusplus
-extern "C" { 
-#endif 
+extern "C" {
+#endif
 
 //+=============================================================================================
 //|     Globale Variablen / global variables
@@ -126,12 +126,12 @@ extern "C" {
 //+=============================================================================================
 
 void platformError (INT32U i32uErrCode_p, TBOOL bFatal_p, INT8U i8uAnzPara_p, ...);
-void platformErrorInit (BSP_TJumpBuf *ptExceptionPoint_p, void (*cbErrHandler_p)(INT32U i32uErrorCode_p, 
+void platformErrorInit (BSP_TJumpBuf *ptExceptionPoint_p, void (*cbErrHandler_p)(INT32U i32uErrorCode_p,
   TBOOL bFatal_p, INT8U i8uParaCnt_p, va_list argptr_p));
 
-#ifdef  __cplusplus 
-} 
-#endif 
+#ifdef  __cplusplus
+}
+#endif
 
 
 #endif // PLATFORMERROR_H_INC

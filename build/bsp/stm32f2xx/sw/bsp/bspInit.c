@@ -37,15 +37,15 @@
 #include <bsp/bspConfig.h>
 #include <bsp/gpio/gpio.h>
 #include <bsp/spi/spi.h>
-#include <sysLib/inc/stm32f2xx.h>
-#include <sysLib/inc/core_cm3.h>
-#include <sysLib/inc/misc.h>
-#include <Syslib/inc/stm32f2xx_flash.h>
+#include <SysLib/inc/stm32f2xx.h>
+#include <SysLib/inc/core_cm3.h>
+#include <SysLib/inc/misc.h>
+#include <SysLib/inc/stm32f2xx_flash.h>
 #include <bsp/setjmp/BspSetJmp.h>
 #include <bsp/bspInit.h>
 #include <bsp/clock/clock.h>
-#include <bsp/led/led.h>
-#if defined (STM_WITH_EEPROM) 
+#include <bsp/led/Led.h>
+#if defined (STM_WITH_EEPROM)
 #include <bsp/eeprom/eeprom.h>
 #endif
 
@@ -55,8 +55,8 @@
 #define NVIC_CCR ((volatile unsigned long *)(0xE000ED14))
 
 //Option Bytes 0x1FFFC000 - 0x1FFFC00F
-typedef 
-#include <COMP_packBegin.h>     
+typedef
+#include <COMP_packBegin.h>
 struct S_OPT_BYTES
 {
 #define OPTION_BYTES_ADDRESS (T_OPT_BYTES*) 0x1FFFC000
@@ -77,12 +77,12 @@ struct S_OPT_BYTES
                                 ///< Bits 15:12 0xF: Not used
     INT8U	i8uReserved2[6];
 }
-#include <COMP_packEnd.h>     
+#include <COMP_packEnd.h>
 T_OPT_BYTES;
 
 
 extern void bspSetExceptionPoint (BSP_TJumpBuf *ptJumpBuf_p);
-extern void bspRegisterErrorHandler (void (*cbErrHandler_p)(INT32U i32uErrorCode_p, TBOOL bFatal_p, 
+extern void bspRegisterErrorHandler (void (*cbErrHandler_p)(INT32U i32uErrorCode_p, TBOOL bFatal_p,
   INT8U i8uParaCnt_p, va_list argptr_p));
 
 extern TBOOL bInitErr_RamTest_g;       //!< indicates an initial RAM test error to the application
@@ -105,7 +105,7 @@ void OptBytes_Init( void )
     //T_KUNBUS_OPT_BYTES	tTmp_l;
     T_OPT_BYTES*	ptOrg_l = OPTION_BYTES_ADDRESS;
     volatile INT32U i32uTmp_l = 0;
-    
+
     //check BOR_LEV
     if( (ptOrg_l->i8uUserOptionBytes & FLASH_OPTCR_BOR_LEV) != 0 ) //we want VBOR3
     { //Option Bytes have to be reset
@@ -124,9 +124,9 @@ void OptBytes_Init( void )
         }
 
         FLASH->OPTCR &= ~FLASH_OPTCR_BOR_LEV;
-        
+
         FLASH->OPTCR |= FLASH_OPTCR_OPTSTRT;
-        
+
         //wait until FLASH is not busy anymore
         while( FLASH->SR & FLASH_SR_BSY )
         {
@@ -140,7 +140,7 @@ void OptBytes_Init( void )
 //| Function: bspInit
 //|
 //! common function for all stm32 board functions initialization.
-//! 
+//!
 //! The function contains the intialization of all "static" functionality for all boards with the
 //! STM32 Microcontroller. Because most boards are very similar there is a benefit in holding the
 //! complete initialization in a central place accross different products.
@@ -151,11 +151,11 @@ void OptBytes_Init( void )
 //!
 //-------------------------------------------------------------------------------------------------
 void bspInit (
-    BSP_TJumpBuf *ptExceptionPoint_p, 
+    BSP_TJumpBuf *ptExceptionPoint_p,
     void (*cbErrHandler_p)(INT32U i32uErrorCode_p, TBOOL bFatal_p, INT8U i8uParaCnt_p, va_list argptr_p))
                             //!< [in] Pointer to application specific error handler
-                            //! \return Error Code, defined in "bspError.h"    
-                            
+                            //! \return Error Code, defined in "bspError.h"
+
 {
     INT32U i32uRv_l = BSPE_NO_ERROR;
 
@@ -165,14 +165,14 @@ void bspInit (
 
     bspSetExceptionPoint (ptExceptionPoint_p);
     bspRegisterErrorHandler (cbErrHandler_p);
-    
+
 
     // Set STKALIGN in NVIC
     *NVIC_CCR = *NVIC_CCR | 0x200;
 
     // Configure number of bits for preemption priority and for subpriority
     NVIC_PriorityGroupConfig(STM_INTERRUPT_PRIORITYGROUP);
-    
+
     //Initialize Option Bytes
     OptBytes_Init();
 
@@ -185,10 +185,10 @@ void bspInit (
 
     bspError (i32uRv_l, bTRUE, 0);
   }
-  
+
 #if defined	(STM_WITH_GPIO)
   gpio_JTAGcfg();
-#endif  
+#endif
 
     //-------------------------------------------------------------------------------------------------
     // SYStick Initialization
@@ -200,7 +200,7 @@ void bspInit (
 
     /* SystTick configuration: an interrupt every 1ms */
     BSP_RCC_GetClocksFreq(&RCC_Clocks);
-    SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);  
+    SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000);
 
     //-------------------------------------------------------------------------------------------------
     // LED Initialization
@@ -216,7 +216,7 @@ void bspInit (
     //-------------------------------------------------------------------------------------------------
     // EEPROM Initialization
     //-------------------------------------------------------------------------------------------------
-#if defined (STM_WITH_EEPROM) 
+#if defined (STM_WITH_EEPROM)
     BSP_EEPROM_init ();
 
     if (ctKunbusApplDescription_g.i32uBootFlags & KUNBUS_APPL_DESCR_BOOT_FACTORY_RESET)
@@ -283,9 +283,9 @@ void bspInit (
 //-------------------------------------------------------------------------------------------------
 void BSP_systemReset (
     void)
-    
+
 {
     NVIC_SystemReset ();
-}    
+}
 
 //*************************************************************************************************
