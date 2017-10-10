@@ -33,23 +33,23 @@
 #include <common_define.h>
 #include <project.h>
 
-#include <bsp\bspError.h>
-#include <bsp\bspConfig.h>
-#include <bsp\gpio\gpio.h>
-#include <bsp\spi\spi.h>
-#include <sysLib\inc\stm32f2xx.h>
-#include <sysLib\inc\core_cm3.h>
-#include <sysLib\inc\misc.h>
-#include <Syslib\inc\stm32f2xx_flash.h>
-#include <bsp\setjmp\BspSetJmp.h>
-#include <bsp\bspInit.h>
-#include <bsp\clock\clock.h>
-#include <bsp\led\led.h>
+#include <bsp/bspError.h>
+#include <bsp/bspConfig.h>
+#include <bsp/gpio/gpio.h>
+#include <bsp/spi/spi.h>
+#include <sysLib/inc/stm32f2xx.h>
+#include <sysLib/inc/core_cm3.h>
+#include <sysLib/inc/misc.h>
+#include <Syslib/inc/stm32f2xx_flash.h>
+#include <bsp/setjmp/BspSetJmp.h>
+#include <bsp/bspInit.h>
+#include <bsp/clock/clock.h>
+#include <bsp/led/led.h>
 #if defined (STM_WITH_EEPROM) 
-#include <bsp\eeprom\eeprom.h>
+#include <bsp/eeprom/eeprom.h>
 #endif
 
-#include <bsp\gpio\gpio.h>
+#include <bsp/gpio/gpio.h>
 
 
 #define NVIC_CCR ((volatile unsigned long *)(0xE000ED14))

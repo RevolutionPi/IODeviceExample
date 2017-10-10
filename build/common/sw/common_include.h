@@ -64,7 +64,7 @@ extern "C" {
 #include <SysLib/CM3/stm32f10x.h>
 #endif
 #elif defined(_MSC_VER)
-#include <bsp\windows_map.h>
+#include <bsp/windows_map.h>
 #else
 # error "Unknown processor !"
 #endif

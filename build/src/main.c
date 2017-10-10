@@ -33,9 +33,9 @@
 #include <common_define.h>
 #include <project.h>
 
-#include <bsp\bspConfig.h>
-#include <bsp\setjmp\BspSetJmp.h>
-#include <bsp\bspInit.h>
+#include <bsp/bspConfig.h>
+#include <bsp/setjmp/BspSetJmp.h>
+#include <bsp/bspInit.h>
 #include "PiBridgeSlave.h"
 #include <platformError.h>
 

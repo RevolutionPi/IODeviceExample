@@ -32,8 +32,8 @@
 #include <common_define.h>
 #include <project.h>
 
-#include <bsp\systick\systick.h>
-#include <bsp\led\Led.h>
+#include <bsp/systick/systick.h>
+#include <bsp/led/Led.h>
 
 
 //+=============================================================================================

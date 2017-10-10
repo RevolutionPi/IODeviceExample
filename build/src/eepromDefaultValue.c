@@ -31,7 +31,7 @@
 #include <project.h>
 #include <common_define.h>
 
-#include <bsp\eeprom\eeprom.h>
+#include <bsp/eeprom/eeprom.h>
 
 const BSP_EEPROM_TLayout BSP_EEPROM_ctDefaultValue = 
 {

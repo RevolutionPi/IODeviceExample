@@ -40,14 +40,14 @@
 #include <common_define.h>
 #include <project.h>
 
-#include <bsp\bspConfig.h>
-#include <bsp\bspError.h>
-#include <bsp\gpio\gpio.h>
-#include <bsp\clock\clock.h>
+#include <bsp/bspConfig.h>
+#include <bsp/bspError.h>
+#include <bsp/gpio/gpio.h>
+#include <bsp/clock/clock.h>
 
-#include <SysLib\inc\stm32f2xx.h>
-#include <SysLib\inc\stm32f2xx_rcc.h>
-#include <SysLib\inc\core_cm3.h>
+#include <SysLib/inc/stm32f2xx.h>
+#include <SysLib/inc/stm32f2xx_rcc.h>
+#include <SysLib/inc/core_cm3.h>
 
 
 // HSE_VALUE must be redefined if the external clock does not have 25MHz

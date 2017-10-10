@@ -18,17 +18,17 @@
 /* Includes ------------------------------------------------------------------*/
 #include <common_define.h>
 #include <project.h>
-#include <bsp\bspConfig.h>
+#include <bsp/bspConfig.h>
 
-#include <SysLib\inc\stm32f2xx.h>
-#include <bsp\systick\systick.h>
+#include <SysLib/inc/stm32f2xx.h>
+#include <bsp/systick/systick.h>
 #if defined (STM_WITH_CAN1) || defined (STM_WITH_CAN2)
-#include <bsp\can\CanDriverIntern.h>
+#include <bsp/can/CanDriverIntern.h>
 #endif
 
-#include <bsp\spi\spi.h>
-#include <bsp\uart\uart_intern.h>
-#include <bsp\timer\timer_intern.h>
+#include <bsp/spi/spi.h>
+#include <bsp/uart/uart_intern.h>
+#include <bsp/timer/timer_intern.h>
 
 #if defined (STM_WITH_ETH)
     extern void BSP_ETH_STM32_IRQHandler (void);

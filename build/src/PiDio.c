@@ -30,25 +30,25 @@
 */
 #include <string.h>
 
-#include <SysLib\inc\stm32f2xx_rcc.h>
-#include <SysLib\inc\stm32f2xx_spi.h>
+#include <SysLib/inc/stm32f2xx_rcc.h>
+#include <SysLib/inc/stm32f2xx_spi.h>
 
 #include <project.h>
 #include <PiDio.h>
 
 #include <common_define.h>
 
-#include <bsp\bspConfig.h>
-#include <bsp\gpio\gpio.h>
-#include <bsp\spi\spi.h>
-#include <bsp\led\led.h>
+#include <bsp/bspConfig.h>
+#include <bsp/gpio/gpio.h>
+#include <bsp/spi/spi.h>
+#include <bsp/led/led.h>
 
 #include <kbUtilities.h>
 #include <ModGateRS485.h>
 #include <ModGateComError.h>
 #include <ModGateComMain.h>
 #include <IoProtocol.h>
-#include <bsp\systick\systick.h>
+#include <bsp/systick/systick.h>
 
 static BSP_SPI_TRwPeriData BSP_Output_tRwPeriData_m;
 static BSP_SPI_TRwPeriData BSP_Input_tRwPeriData_m;

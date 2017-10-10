@@ -41,20 +41,20 @@
   #define	GLOBAL_INTERRUPT_DISABLE()		__disable_irq()
 
 #elif defined (STM32F40_41xxx) || defined (STM32F427_437xx) || defined (STM32F429_439xx) || defined (STM32F401xx)
-  #include <syslib\inc\stm32f4xx.h>
+  #include <syslib/inc/stm32f4xx.h>
 
   #define	GLOBAL_INTERRUPT_ENABLE()		__enable_irq()
   #define	GLOBAL_INTERRUPT_DISABLE()		__disable_irq()
 
 #elif defined (_MSC_VER)
-  #include <bsp\globalIntCtrl\bspGlobalIntCtrl_win32.h>
+  #include <bsp/globalIntCtrl/bspGlobalIntCtrl_win32.h>
 
   #define	GLOBAL_INTERRUPT_ENABLE()		bspGlobalIntEnable()
   #define	GLOBAL_INTERRUPT_DISABLE()		bspGlobalIntDisable()
 
 #elif defined (__NIOS_GENERIC__)
 
-  #include <sys\alt_irq.h>
+  #include <sys/alt_irq.h>
 
   #define	GLOBAL_INTERRUPT_ENABLE()	{\
                                             alt_irq_context context;\

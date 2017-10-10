@@ -30,7 +30,7 @@
 */
 
 #include <project.h>
-#include <bsp\led\led.h>
+#include <bsp/led/led.h>
 
 TBOOL bLedBlocked_g = bFALSE;
 

@@ -33,7 +33,7 @@
 #include <common_define.h>
 #include <project.h>
 #include <platformError.h>
-#include <bsp\setjmp\BspSetJmp.h>
+#include <bsp/setjmp/BspSetJmp.h>
 
 INT32U i32uFatalError_g;
 static TBOOL bPlatformErrRecursive_s = bFALSE;

@@ -41,12 +41,12 @@
 
 #include <bsp/bspConfig.h>
 
-#include <SysLib\inc\stm32f2xx_rcc.h>
-#include <SysLib\inc\stm32f2xx_tim.h>
-#include <SysLib\inc\stm32f2xx.h>
-#include <SysLib\inc\misc.h>
+#include <SysLib/inc/stm32f2xx_rcc.h>
+#include <SysLib/inc/stm32f2xx_tim.h>
+#include <SysLib/inc/stm32f2xx.h>
+#include <SysLib/inc/misc.h>
 
-#include <bsp\gpio\gpio.h>
+#include <bsp/gpio/gpio.h>
 
 //+=============================================================================================
 //|		Globale Variablen / global variables

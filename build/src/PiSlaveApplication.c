@@ -33,14 +33,14 @@
 #include <project.h>
 #include <common_define.h>
 
-#include <bsp\gpio\gpio.h>
+#include <bsp/gpio/gpio.h>
 
 #include <ModGateRS485.h>
 #include <ModGateComMain.h>
 #include <application.h>
 #include <PiSlaveApplication.h>
 #include <PiDio.h>
-#include <bsp\timer\timer.h>
+#include <bsp/timer/timer.h>
 
 MODGATECOM_IDResp MODGATE_OwnID_g;     //!< ID-Data of this mGate
 TBOOL bIoTimerActive_g = bFALSE;

@@ -39,17 +39,17 @@
 #error STM_WITH_LED must be defined in project.h to use LED driver
 #endif
 
-#include <bsp\bspConfig.h>
-#include <bsp\led\led.h>
-#include <Syslib\inc\stm32f2xx.h>
-#include <bsp\led\ledIntern.h>
+#include <bsp/bspConfig.h>
+#include <bsp/led/led.h>
+#include <Syslib/inc/stm32f2xx.h>
+#include <bsp/led/ledIntern.h>
 
 #ifdef STM_LED_GPIO
-#include <bsp\gpio\gpio.h>
+#include <bsp/gpio/gpio.h>
 #endif
 INT16U    LED_i16uLedVariable_g;
 
-#include <bsp\bspError.h>
+#include <bsp/bspError.h>
 
 // This variable is used to temporary prevent LED updates and is needed for two cases:
 // a) To temporary use LED output pins for other purposes, e.g. as input values from rotary switches

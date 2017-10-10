@@ -30,18 +30,18 @@
 */
 #include <common_define.h>
 #include <project.h>
-#include <bsp\bspConfig.h>
+#include <bsp/bspConfig.h>
 
 #ifndef STM_WITH_COUNT_DOWN_TIMER
 #error " timer cannot be used without STM_WITH_COUNT_DOWN_TIMER to be defined !"
 #endif
 
-#include <bsp\bspError.h>
-#include <bsp\timer\timer.h>
-#include <bsp\clock\clock.h>
-#include <SysLib\inc\stm32f2xx_tim.h>
-#include <SysLib\inc\stm32f2xx_rcc.h>
-#include <SysLib\inc\misc.h>
+#include <bsp/bspError.h>
+#include <bsp/timer/timer.h>
+#include <bsp/clock/clock.h>
+#include <SysLib/inc/stm32f2xx_tim.h>
+#include <SysLib/inc/stm32f2xx_rcc.h>
+#include <SysLib/inc/misc.h>
 
 //+=============================================================================================
 //|        Konstanten / constants

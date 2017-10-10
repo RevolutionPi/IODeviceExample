@@ -42,13 +42,13 @@ extern "C" {
 //|		Include-Dateien / include files
 //+=============================================================================================
 #if defined (STM32F30X)
-  #include <syslib\inc\stm32f30x_rcc.h>
+  #include <syslib/inc/stm32f30x_rcc.h>
 #elif defined (STM32F2XX)
-  #include <syslib\inc\stm32f2xx_rcc.h>
+  #include <syslib/inc/stm32f2xx_rcc.h>
 #elif defined (STM32F40_41xxx) || defined (STM32F427_437xx) || defined (STM32F429_439xx) || defined (STM32F401xx)
-  #include <syslib\inc\stm32f4xx_rcc.h>
+  #include <syslib/inc/stm32f4xx_rcc.h>
 #elif defined (STM32F10X_CL) || defined (STM32F10X_HD) || defined (STM32F10X_MD) || defined (STM32F10X_LD)
-  #include <syslib\inc\stm32f10x_rcc.h>
+  #include <syslib/inc/stm32f10x_rcc.h>
 #endif
 
 //+=============================================================================================

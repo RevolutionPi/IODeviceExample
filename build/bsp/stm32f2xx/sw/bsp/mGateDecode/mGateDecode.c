@@ -31,8 +31,8 @@
 #include <project.h>
 #include <common_define.h>
 
-#include <bsp\gpio\gpio.h>
-#include <bsp\mGateDecode\mGateDecode.h>
+#include <bsp/gpio/gpio.h>
+#include <bsp/mGateDecode/mGateDecode.h>
 
 #if !defined (MGATE_DECODE_MS1B)
     #error "Using mGateDecode without definition of MGATE_DECODE_MS1B"

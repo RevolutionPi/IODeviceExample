@@ -67,7 +67,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "..\inc\misc.h"
+#include "../inc/misc.h"
 
 /** @addtogroup STM32F2xx_StdPeriph_Driver
   * @{

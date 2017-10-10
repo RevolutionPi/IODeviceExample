@@ -35,8 +35,8 @@
 #include <bsp/bspConfig.h>
 #include <bsp/led/led.h>
 
-#include <bsp\bspError.h>
-#include <bsp\setjmp\BspSetJmp.h>
+#include <bsp/bspError.h>
+#include <bsp/setjmp/BspSetJmp.h>
 
 static BSP_TJumpBuf *ptJumpBuf_s = (BSP_TJumpBuf *)0;
 static void (*cbErrHandler_s)(INT32U i32uErrorCode_p, TBOOL bFatal_p, INT8U i8uParaCnt_p, va_list argptr_p);

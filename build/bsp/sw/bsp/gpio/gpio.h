@@ -45,15 +45,15 @@ extern "C" {
 //+=============================================================================================
 
 #if defined (STM32F2XX)
-  #include <SysLib\inc\stm32f2xx_gpio.h>
+  #include <SysLib/inc/stm32f2xx_gpio.h>
 #elif defined (STM32F30X)
-  #include <syslib\inc\stm32f30x_gpio.h>
+  #include <syslib/inc/stm32f30x_gpio.h>
 #elif defined (STM32F40_41xxx) || defined (STM32F427_437xx) || defined (STM32F429_439xx) || defined (STM32F401xx)
-  #include <syslib\inc\stm32f4xx_gpio.h>
+  #include <syslib/inc/stm32f4xx_gpio.h>
 #elif defined __SF2_GENERIC__
-  #include <drivers\mss_gpio\mss_gpio.h>
+  #include <drivers/mss_gpio/mss_gpio.h>
 #else
-  #include <SysLib\inc\stm32f10x_gpio.h>
+  #include <SysLib/inc/stm32f10x_gpio.h>
 #endif
 
 #if defined	(STM_WITH_GPIO)

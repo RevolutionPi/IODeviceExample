@@ -34,18 +34,18 @@
 //+=============================================================================================
 #include <common_define.h>
 #include <project.h>
-#include <bsp\bspError.h>
-#include <bsp\bspConfig.h>
-#include <bsp\clock\clock.h>
+#include <bsp/bspError.h>
+#include <bsp/bspConfig.h>
+#include <bsp/clock/clock.h>
 
-#include <bsp\uart\uart.h>
-#include <bsp\uart\uart_intern.h>
+#include <bsp/uart/uart.h>
+#include <bsp/uart/uart_intern.h>
 
-#include <SysLib\inc\stm32f2xx_usart.h>
-#include <SysLib\inc\misc.h>
-#include <SysLib\inc\stm32f2xx.h>
-#include <SysLib\inc\stm32f2xx_rcc.h>
-#include <bsp\gpio\gpio.h>
+#include <SysLib/inc/stm32f2xx_usart.h>
+#include <SysLib/inc/misc.h>
+#include <SysLib/inc/stm32f2xx.h>
+#include <SysLib/inc/stm32f2xx_rcc.h>
+#include <bsp/gpio/gpio.h>
 
 /*!< USART CR1 register clear Mask ((~(uint16_t)0xE9F3)) */
 #define CR1_CLEAR_MASK            ((uint16_t)(USART_CR1_M  | USART_CR1_PCE | \

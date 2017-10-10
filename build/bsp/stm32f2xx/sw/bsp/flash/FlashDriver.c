@@ -36,7 +36,7 @@
 #include <bsp/flash/stm32f2xx_flash_la.h>
 
 #include <bsp/flash/FlashDriver.h>
-#include <bsp\bspError.h>
+#include <bsp/bspError.h>
 
 //*************************************************************************************************
 //| Function: BSP_FLASH_eraseBlock

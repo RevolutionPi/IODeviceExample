@@ -32,7 +32,7 @@
 #define APPLICATION_H_INC
 
 #include <project.h>
-#include <bsp\led\Led.h>
+#include <bsp/led/Led.h>
 
 #ifdef __cplusplus
 extern "C" { 

@@ -33,7 +33,7 @@
 #define PIBRIDGESLAVE_H_INC
 
 #include <stdarg.h>
-#include <bsp\setjmp\BspSetJmp.h>
+#include <bsp/setjmp/BspSetJmp.h>
 
 typedef enum
 {
