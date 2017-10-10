@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="stm32">
+      <UniqueIdentifier>{50ff599e-c292-4e0c-8cf3-919f6b420710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp">
+      <UniqueIdentifier>{db9283db-bdac-426a-9a26-2ba2a8433822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\led">
+      <UniqueIdentifier>{a4c18672-7c08-45ea-86c6-a1768d45c470}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\spi">
+      <UniqueIdentifier>{d9e09130-2165-43d6-8ef5-ff94ae09dc70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\systick">
+      <UniqueIdentifier>{ce7d7514-0983-41ba-862a-8dc68aa9e762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\uart">
+      <UniqueIdentifier>{b86c430b-e556-42de-a5de-5289767a0092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\flash">
+      <UniqueIdentifier>{2404f523-bdf2-4f7d-ab63-40e91d7ba8d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\clock">
+      <UniqueIdentifier>{3b54987b-6970-4166-bb9e-11a9eb7497ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\setjmp">
+      <UniqueIdentifier>{412d5ad4-1f66-44ac-96ee-8805e4afe855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\gpio">
+      <UniqueIdentifier>{1874b89f-46e9-4419-8b2b-10c0f9d96b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\SysLib">
+      <UniqueIdentifier>{093aaeb9-51d1-4bbc-a27b-369ba617af67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\SysLib\CM3">
+      <UniqueIdentifier>{e19a0a7d-3f6c-44d4-8b03-f66b2fce0696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\SysLib\inc">
+      <UniqueIdentifier>{af577d98-f103-4f53-9846-8d2db6865359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\SysLib\src">
+      <UniqueIdentifier>{50c0024c-e56d-4a51-b687-08d1a461c588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\timer">
+      <UniqueIdentifier>{fb428ffb-47bd-41e5-996c-912d00f1955c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="build">
+      <UniqueIdentifier>{6ce70cdf-f78f-4947-8b87-d5df36495f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{90adcf96-d07d-4fda-bff5-8548ca0c6819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{55d3dd30-20a9-4d68-b533-5f1f198f4a95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler">
+      <UniqueIdentifier>{19a29992-f4fd-40f2-9d89-5a130f2c9d8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compiler\gnuArm">
+      <UniqueIdentifier>{ba5d5b79-3383-4dd7-8949-133302f6f036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{9ccc72cd-720f-406f-bd8a-eb22078c6acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModGateCom">
+      <UniqueIdentifier>{35c5e61f-765b-44fe-a302-799b43639b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\GlobalIntCtrl">
+      <UniqueIdentifier>{7a39023e-f358-4d8e-84bd-5643db1768be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\mGateDecode">
+      <UniqueIdentifier>{9ee666ba-1d57-48cc-adc1-1aed711ecf4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stm32\bsp\timer">
+      <UniqueIdentifier>{48f57053-07b0-4f3f-953b-2af642b48c69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\eepromLayout.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\clock\clock.c">
+      <Filter>stm32\bsp\clock</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\clock\clock.h">
+      <Filter>stm32\bsp\clock</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\globalIntCtrl\bspGlobalIntCtrl.h">
+      <Filter>stm32\bsp\GlobalIntCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\bspConfig.h">
+      <Filter>stm32\bsp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\bspError.c">
+      <Filter>stm32\bsp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\bspError.h">
+      <Filter>stm32\bsp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\bspInit.c">
+      <Filter>stm32\bsp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\bspInit.h">
+      <Filter>stm32\bsp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\setjmp\BspSetJmp.c">
+      <Filter>stm32\bsp\setjmp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\setjmp\BspSetJmp.h">
+      <Filter>stm32\bsp\setjmp</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\CM3\core_cm3.c">
+      <Filter>stm32\SysLib\CM3</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\core_cm3.h">
+      <Filter>stm32\SysLib\CM3</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\flash\FlashDriver.c">
+      <Filter>stm32\bsp\flash</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\flash\FlashDriver.h">
+      <Filter>stm32\bsp\flash</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\gpio\gpio.c">
+      <Filter>stm32\bsp\gpio</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\gpio\gpio.h">
+      <Filter>stm32\bsp\gpio</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_conf.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_flash.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\flash\stm32f2xx_flash_la.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_gpio.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_rcc.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_spi.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_syscfg.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_tim.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_usart.h">
+      <Filter>stm32\SysLib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\src\stm32f2xx_gpio.c">
+      <Filter>stm32\SysLib\src</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\src\stm32f2xx_spi.c">
+      <Filter>stm32\SysLib\src</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\stm32f2xx_vector.c">
+      <Filter>stm32\SysLib\src</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\src\misc.c">
+      <Filter>stm32\SysLib</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\misc.h">
+      <Filter>stm32\SysLib</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\spi\spi.c">
+      <Filter>stm32\bsp\spi</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\spi\spi.h">
+      <Filter>stm32\bsp\spi</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\timer\timer.h">
+      <Filter>stm32\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\timer\timer_intern.h">
+      <Filter>stm32\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\uart\uart.c">
+      <Filter>stm32\bsp\uart</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\uart\uart.h">
+      <Filter>stm32\bsp\uart</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\uart\uart_intern.h">
+      <Filter>stm32\bsp\uart</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\led\Led.c">
+      <Filter>stm32\bsp\led</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\led\Led.h">
+      <Filter>stm32\bsp\led</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\systick\systick.c">
+      <Filter>stm32\bsp\systick</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\sw\bsp\systick\systick.h">
+      <Filter>stm32\bsp\systick</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\timer\timer_count_up.c">
+      <Filter>stm32\bsp\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\timer\timer.c">
+      <Filter>stm32\bsp\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\sw\kbUtilities.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities\sw\kbAlloc.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PiDio.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="ModGateCom\sw\PiBridgeSlave.h">
+      <Filter>ModGateCom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModGateCom\sw\PiSlaveApplication.h">
+      <Filter>ModGateCom</Filter>
+    </ClInclude>
+    <ClInclude Include="common\sw\common_define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\sw\common_include.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\sw\platformError.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="compiler\sw\gnuArm\COMP_packBegin.h">
+      <Filter>compiler\gnuArm</Filter>
+    </ClInclude>
+    <ClInclude Include="compiler\sw\gnuArm\COMP_packEnd.h">
+      <Filter>compiler\gnuArm</Filter>
+    </ClInclude>
+    <ClInclude Include="ModGateCom\sw\ModGateRS485.h">
+      <Filter>ModGateCom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModGateCom\sw\IoProtocol.h">
+      <Filter>ModGateCom</Filter>
+    </ClInclude>
+    <ClInclude Include="firmware\sw\stm32\fwuCore.h">
+      <Filter>stm32\bsp\firmware</Filter>
+    </ClInclude>
+    <ClInclude Include="firmware\sw\stm32\fwuCore.h" />
+    <ClInclude Include="firmware\sw\stm32\fwuCore.h" />
+    <ClInclude Include="firmware\sw\stm32\fwuCore.h" />
+    <ClInclude Include="firmware\sw\stm32\fwuCore.h" />
+    <ClInclude Include="firmware\sw\stm32\fwuCore.h" />
+    <ClInclude Include="src\project.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\system_stm32f2xx.h">
+      <Filter>stm32\SysLib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\application.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\eepromDefaultValue.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="bsp\stm32f2xx\sw\bsp\mGateDecode\mGateDecode.c">
+      <Filter>stm32\bsp\mGateDecode</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\sw\kbAlloc.c">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities\sw\kbUtilities.c">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PiSlaveApplication.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PiDio.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="ModGateCom\sw\PiBridgeSlave.c">
+      <Filter>ModGateCom</Filter>
+    </ClCompile>
+    <ClCompile Include="common\sw\platformError.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="ModGateCom\sw\ModGateRS485.c">
+      <Filter>ModGateCom</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FW_Desc.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="ModGateCom\sw\stm32fxxx\PiBridgeSlave_ll.c">
+      <Filter>ModGateCom</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile">
+      <Filter>build</Filter>
+    </None>
+    <None Include="STM32F205RE_flash.ld">
+      <Filter>build</Filter>
+    </None>
+    <None Include="PiDio.elf.map" />
+  </ItemGroup>
+</Project>

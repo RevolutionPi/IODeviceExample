@@ -1,0 +1,152 @@
+;
+; Example Script for programming of ST STM32F2xx internal flash
+;
+; List of STM32F2xx derivatives and their configuration:
+;
+;   CPU-Type      Flash size
+;                   [kByte]
+;   -------------------------
+;   STM32F205RB       128.
+;   STM32F205RC       256.
+;   STM32F205RE       512.
+;   STM32F205RF       768.
+;   STM32F205RG      1024.
+;   STM32F205VC       256.
+;   STM32F205VG      1024.
+;   STM32F205ZC       256.
+;   STM32F205ZG      1024.
+;   -------------------------
+;   STM32F207IC       256.
+;   STM32F207IG      1024.
+;   STM32F207VC       256.
+;   STM32F207VG      1024.
+;   STM32F207ZC       256.
+;   STM32F207ZG      1024.
+;   -------------------------
+;   STM32F215RE       512.
+;   STM32F215RG      1024.
+;   STM32F215VE       512.
+;   STM32F215VG      1024.
+;   STM32F215ZE       512.
+;   STM32F215ZG      1024.
+;   -------------------------
+;   STM32F217IE       512.
+;   STM32F217IG      1024.
+;   STM32F217VE       512.
+;   STM32F217VG      1024.
+;   STM32F217ZE       512.
+;   STM32F217ZG      1024.
+;
+; Flash base address is 0x08000000
+; SRAM base address is  0x20000000
+;
+; $Author: mduckeck $
+; $Date: 2016-06-16 11:20:20 +0200 (Do, 16 Jun 2016) $
+; $Rev: 178 $
+;
+
+ENTRY &file
+
+  ;========================================================================
+  ; CPU setup
+
+  IF SYSTEM.MODE()<5
+  (
+    SYStem.RESet
+    SYStem.CPU STM32F205RE
+    SYStem.Up
+  )
+
+  ;========================================================================
+  ; Flash declaration
+
+  FLASH.RESet
+  GOSUB FlashDeclaration
+
+  ;========================================================================
+  ; Flash programming example
+
+  DIALOG.YESNO "Program flash memory?"
+  LOCAL &progflash
+  ENTRY &progflash
+
+  flash.list
+  
+  IF &progflash 
+  (
+    FLASH.ReProgram ALL /Erase
+	Data.LOAD.elf &file 0x08000000 /GNU
+    FLASH.ReProgram off
+
+    ; Reset device
+    SYStem.Down
+    SYStem.Up
+  )
+
+  ENDDO
+
+
+;========================================================================
+; Flash declaration depending on selected CPU 
+
+FlashDeclaration:
+  LOCAL &FlashSize
+
+  IF CPUIS("STM32F20??B")||CPUIS("STM32F21??B")
+  (
+    &FlashSize=0x20000
+  )
+  ELSE IF CPUIS("STM32F20??C")||CPUIS("STM32F21??C")
+  (
+    &FlashSize=0x40000
+  )
+  ELSE IF CPUIS("STM32F20??E")||CPUIS("STM32F21??E")
+  (
+    &FlashSize=0x80000
+  )
+  ELSE IF CPUIS("STM32F20??F")||CPUIS("STM32F21??F")
+  (
+    &FlashSize=0xc0000
+  )
+  ELSE IF CPUIS("STM32F20??G")||CPUIS("STM32F21??G")
+  (
+    &FlashSize=0x100000
+  )
+  ELSE
+  (
+    PRINT %ERROR "FLASH size of CPU type is unknown"
+    ENDDO
+  )
+
+  IF &FlashSize>=0x20000
+  (
+    FLASH.Create 1. 0x08000000--0x08003fff TARGET Byte 0.
+    FLASH.Create 1. 0x08004000--0x08007fff TARGET Byte 1.
+    FLASH.Create 1. 0x08008000--0x0800bfff TARGET Byte 2.
+    FLASH.Create 1. 0x0800c000--0x0800ffff TARGET Byte 3.
+    FLASH.Create 1. 0x08010000--0x0801ffff TARGET Byte 4.
+  )
+  IF &FlashSize>=0x40000
+  (
+    FLASH.Create 1. 0x08020000--0x0803ffff TARGET Byte 5.
+  )
+  IF &FlashSize>=0x80000
+  (
+    FLASH.Create 1. 0x08040000--0x0805ffff TARGET Byte 6.
+    FLASH.Create 1. 0x08060000--0x0807ffff TARGET Byte 7.
+  )
+  IF &FlashSize>=0xc0000
+  (
+    FLASH.Create 1. 0x08080000--0x0809ffff TARGET Byte 8.
+    FLASH.Create 1. 0x080a0000--0x080bffff TARGET Byte 9.
+  )
+  IF &FlashSize>=0x100000
+  (
+    FLASH.Create 1. 0x080c0000--0x080dffff TARGET Byte 10.
+    FLASH.Create 1. 0x080e0000--0x080fffff TARGET Byte 11.
+  )
+
+  FLASH.TARGET 0x20000000 0x20001000 0x1000 ~~/demo/arm/flash/byte/stm32f200.bin
+
+  RETURN
+

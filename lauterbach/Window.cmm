@@ -1,0 +1,54 @@
+// T32_1000332 Wed Jun 14 09:28:40 2017
+
+ B::
+ 
+ TOOLBAR ON
+ STATUSBAR ON
+ FramePOS 0.28571 0.083333 268. 78.
+ WinPAGE.RESet
+ 
+ WinPAGE.Create P000
+ 
+ WinCLEAR
+ WinPOS 13.143 4.75 194. 37. 0. 1. W006
+ WinTABS 103. 26.
+ sYmbol.Browse.SOURCE \"M:/src/raspi/products/PiDio/src/main.c"\*
+ 
+ WinPOS 191.29 0.0 72. 27. 0. 0. W001
+ Register /SpotLight
+ 
+ WinPOS 1.1429 61.25 90. 10. 5. 0. W004
+ Frame
+ 
+ WinPOS 97.0 61.583 88. 10. 26. 1. W003
+ WinTABS 13. 16. 0. 0. 0. 0. 0.
+ Break.List
+ 
+ WinPOS 0.0 0.0 185. 55. 8. 0. LIST NORMAL "Intermixed Source/Assembly"
+ WinTABS 10. 10. 25. 62.
+ Data.List
+ 
+ WinPOS 190.0 33.25 72. 38. 0. 0. W002
+ Var.Watch
+ 
+ VAR.ADDWATCH eRunStatus_s
+ VAR.ADDWATCH bConfigurationComplete_g
+ VAR.ADDWATCH bResponseState_g
+ VAR.ADDWATCH i8uSniff1bState_s
+ VAR.ADDWATCH eIoProtocolState_g
+ VAR.ADDWATCH eRs485State_g
+ VAR.ADDWATCH eRs485Protocol_g
+ VAR.ADDWATCH input1A_g
+ VAR.ADDWATCH input1B_g
+ VAR.ADDWATCH input2_g
+ VAR.ADDWATCH output1A_g
+ VAR.ADDWATCH output1B_g
+ VAR.ADDWATCH output2_g
+ VAR.ADDWATCH sniff2
+ VAR.ADDWATCH tResetMin
+ VAR.ADDWATCH tResetMax
+ VAR.ADDWATCH tReset
+ 
+ WinPAGE.select P000
+ 
+ ENDDO

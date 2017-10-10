@@ -1,0 +1,60 @@
+; Script for STM32F103 board.
+; STK/PEG, February 2009
+
+winclear
+; load additional symbols
+do ..\lauterbach\symbols.cmm
+setup.ts 4
+
+&target="..\build\PiDio.elf"
+
+sys.down
+sys.reset
+
+sys.cpu STM32F205RE
+
+; memory map
+; 0x00000000 1024kB FLASH
+; 0x20000000 128kB SRAM
+; Flash region
+MAP.BOnchip 0x00000000++0x100000
+MAP.BOnchip 0x08000000++0x100000
+
+; When using narrow half size 20 pin connector
+sys.config connector mipi20T
+
+; Use ARMs Serial Wire to connect to STM32F103 chip
+sys.config SWDP ON
+
+; Bypass CPLD
+;system.config.DAPIRPOST 5.
+;system.config.DAPDRPOST 1.
+
+; Connect to STM32FXXX chip
+sys.up
+  
+; Verify flash programming
+Data.LOAD.ELF &target /DIFF /GNU
+IF FOUND()
+(
+	do ..\lauterbach\flash_stm32F205RE.cmm &target
+)
+
+Data.LOAD.ELF &target /NOCODE
+	
+sys.cpuaccess.enable
+
+; Now start application
+;Register.Set r13 0x20000400
+Register.set r13 Data.Long(P:0x0)
+;Register.Set pc Reset_Handler
+Register.set pc Data.Long(P:0x4)
+
+SYSTEM.OPTION.IMASKASM on
+SYSTEM.OPTION.IMASKHLL on
+mode.hll
+
+do Window.cmm
+
+; run to main
+go main

@@ -1,0 +1,39 @@
+;Default startup program for TRACE32
+;
+;This startup program can be modified according to your needs.
+
+;choose hex mode for input
+ radix hex
+
+;Add some extra buttons to the toolbar
+
+ menu.rp
+ (
+	add
+	toolbar
+	(
+	toolitem "Reset"      		"Reset,X"     "system.resettarget"
+	toolitem "Attach"      		"ATTACH,X"    "do  ..\lauterbach\attach.cmm"
+	toolitem "Symbols"          "SYMBOL,X"    "SYMBOL.LIST.TREE "
+	toolitem "Disable IRQs"     "ID,X"    	  "r.s primask 1"
+	toolitem "Enable IRQs"     	"IE,X"    	  "r.s primask 0"
+	separator
+	)
+ )
+ 
+
+
+ if language()!=""
+ (
+  local &menuname
+  &menuname="~~/t32"+language()+".men"
+  if os.file(&menuname)
+     menu.rp &menuname
+ )
+
+;Recall and Define History File
+ autostore , history bookmark
+
+enddo
+
+

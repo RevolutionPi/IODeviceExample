@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="STM32F205RE|Win32">
+      <Configuration>STM32F205RE</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3625F69-34BF-4737-868A-DF356C525601}</ProjectGuid>
+    <RootNamespace>PM_DeviceNet</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">obj</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">obj</IntDir>
+    <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">make -j 8 all 2&gt;&amp;1 | tools\gnuformat</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">make clean &amp;&amp; make -j 8 all 2&gt;&amp;1 | tools\gnuformat</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">make clean</NMakeCleanCommandLine>
+    <NMakeOutput Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'" />
+    <NMakePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">__STM32GENERIC__</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">common;bsp\stm32f2xx\sw;bsp\sw;common\sw;src;ModGateCom\sw;PiIoCom\sw;interfaces\sw;firmware\sw;utilities\sw;COMS\sw;PiBridgeSlave\sw;compiler\sw\visualStudio;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">stm32\sw\bsp\bspConfig.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeAssemblySearchPath Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <NMakeForcedUsingAssemblies Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">$(NMakeForcedUsingAssemblies)</NMakeForcedUsingAssemblies>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='STM32F205RE|Win32'">
+    <BuildLog>
+      <Path>BuildLog.htm</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="utilities\sw\kbAlloc.h" />
+    <ClInclude Include="utilities\sw\kbUtilities.h" />
+    <ClInclude Include="common\sw\common_define.h" />
+    <ClInclude Include="common\sw\common_include.h" />
+    <ClInclude Include="common\sw\platformError.h" />
+    <ClInclude Include="compiler\sw\gnuArm\COMP_packBegin.h" />
+    <ClInclude Include="compiler\sw\gnuArm\COMP_packEnd.h" />
+    <ClInclude Include="ModGateCom\sw\IoProtocol.h" />
+    <ClInclude Include="ModGateCom\sw\ModGateRS485.h" />
+    <ClInclude Include="ModGateCom\sw\PiBridgeSlave.h" />
+    <ClInclude Include="ModGateCom\sw\PiSlaveApplication.h" />
+    <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\eepromLayout.h" />
+    <ClInclude Include="src\PiDio.h" />
+    <ClInclude Include="src\project.h" />
+    <ClInclude Include="bsp\sw\bsp\uart\uart.h" />
+    <ClInclude Include="bsp\sw\bsp\timer\timer.h" />
+    <ClInclude Include="bsp\sw\bsp\systick\systick.h" />
+    <ClInclude Include="bsp\sw\bsp\spi\spi.h" />
+    <ClInclude Include="bsp\sw\bsp\setjmp\BspSetJmp.h" />
+    <ClInclude Include="bsp\sw\bsp\led\Led.h" />
+    <ClInclude Include="bsp\sw\bsp\gpio\gpio.h" />
+    <ClInclude Include="bsp\sw\bsp\globalIntCtrl\bspGlobalIntCtrl.h" />
+    <ClInclude Include="bsp\sw\bsp\flash\FlashDriver.h" />
+    <ClInclude Include="bsp\sw\bsp\clock\clock.h" />
+    <ClInclude Include="bsp\sw\bsp\bspInit.h" />
+    <ClInclude Include="bsp\sw\bsp\bspError.h" />
+    <ClInclude Include="bsp\sw\bsp\bspConfig.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\uart\uart_intern.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\timer\timer_intern.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\flash\stm32f2xx_flash_la.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\system_stm32f2xx.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_usart.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_tim.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_syscfg.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_spi.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_rcc.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_gpio.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_flash.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx_conf.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\stm32f2xx.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\misc.h" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\inc\core_cm3.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bsp\stm32f2xx\sw\bsp\mGateDecode\mGateDecode.c" />
+    <ClCompile Include="ModGateCom\sw\stm32fxxx\PiBridgeSlave_ll.c" />
+    <ClCompile Include="src\FW_Desc.c" />
+    <ClCompile Include="utilities\sw\kbAlloc.c" />
+    <ClCompile Include="utilities\sw\kbUtilities.c" />
+    <ClCompile Include="common\sw\platformError.c" />
+    <ClCompile Include="ModGateCom\sw\ModGateRS485.c" />
+    <ClCompile Include="ModGateCom\sw\PiBridgeSlave.c" />
+    <ClCompile Include="src\application.c" />
+    <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\eepromDefaultValue.c" />
+    <ClCompile Include="src\PiDio.c" />
+    <ClCompile Include="src\PiSlaveApplication.c" />
+    <ClInclude Include="bsp\sw\bsp\systick\systick.c" />
+    <ClInclude Include="bsp\sw\bsp\bspError.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\uart\uart.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\timer\timer_count_up.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\timer\timer.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\stm32f2xx_vector.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\spi\spi.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\setjmp\BspSetJmp.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\led\Led.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\gpio\gpio.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\flash\FlashDriver.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\clock\clock.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\bsp\bspInit.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\src\stm32f2xx_spi.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\src\stm32f2xx_gpio.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\src\misc.c" />
+    <ClInclude Include="bsp\stm32f2xx\sw\SysLib\CM3\core_cm3.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile" />
+    <None Include="PiDio.elf.map" />
+    <None Include="STM32F205RE_flash.ld" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
