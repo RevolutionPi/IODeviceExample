@@ -42,8 +42,8 @@
 #include <bsp/timer/timer.h>
 
 #define MASTER_PRESENT_TIME 10
-#define MASTER_PRESENT_TIME_MIN  7500   // for count up timer with 1µs resolution
-#define MASTER_PRESENT_TIME_MAX  9500   // for count up timer with 1µs resolution
+#define MASTER_PRESENT_TIME_MIN  7500   // for count up timer with 1Âµs resolution
+#define MASTER_PRESENT_TIME_MAX  9500   // for count up timer with 1Âµs resolution
 #define NEXT_CONFIG_TIME 10
 #define END_CONFIG_TIME 3000
 
@@ -128,11 +128,11 @@ void PiBridgeSlaveRun()
             ModGateRs485SetResponseState(bFALSE);
 
             // use a count up timer instead of tTimeoutTimer_s, because tTimeoutTimer_s is not accurate enough
-            BSP_count_up_timer_init(1);     // timer is counting in 1µs steps
+            BSP_count_up_timer_init(1);     // timer is counting in 1Âµs steps
             BSP_count_up_timer_start();     // start timer with 0
         }
         sniff2 = PIBS_ReadSniff2();
-        tReset = BSP_count_up_timer_get();  // get µs since BSP_count_up_timer_start()
+        tReset = BSP_count_up_timer_get();  // get Âµs since BSP_count_up_timer_start()
         if (sniff2 == 0)
         {
             if (tReset < MASTER_PRESENT_TIME_MIN)

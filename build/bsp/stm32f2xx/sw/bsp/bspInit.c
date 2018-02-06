@@ -63,9 +63,9 @@ struct S_OPT_BYTES
 
     //0x1FFFC000
     INT8U   i8uUserOptionBytes;	///< This byte is used to configure the following features:
-                                ///< – Select the watchdog event: Hardware or software
-                                ///< – Reset event when entering the Stop mode
-                                ///< – Reset event when entering the Standby mode
+                                ///< â€“ Select the watchdog event: Hardware or software
+                                ///< â€“ Reset event when entering the Stop mode
+                                ///< â€“ Reset event when entering the Standby mode
 
     INT8U   i8uROP_OptionBytes;	///< 0xAA: Level 0, no protection
                                 ///< 0xCC: Level 2, chip protection (debug and boot from RAM features disabled)

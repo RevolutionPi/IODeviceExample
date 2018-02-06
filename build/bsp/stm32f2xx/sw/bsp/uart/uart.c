@@ -593,7 +593,7 @@ INT32U UART_init (
             i16uTmpReg_l |= ((((fractionaldivider * 16) + 50) / 100)) & ((uint8_t)0x0F);
 #endif
 
-        // Achtung für Test Sensorbus bitte löschenfalls es vergessen wurde - Ralf Meeh, 29.07.2015
+        // Achtung fÃ¼r Test Sensorbus bitte lÃ¶schenfalls es vergessen wurde - Ralf Meeh, 29.07.2015
         //     if (baudrate == 1000)
         //     {
         //         integerdivider = 0x01d4; 

@@ -66,7 +66,7 @@ typedef enum
     eCmdGetErrorLog           = 0x000f,
     eCmdScriptMessage         = 0x0010,
     eCmdAgentCode             = 0x0011,     //!< Agent testing only, not in productive environment
-    eCmdserFlashErase         = 0x0012,     // löschen des externen Flash 
+    eCmdserFlashErase         = 0x0012,     // lÃ¶schen des externen Flash 
     eCmdserFlashWrite         = 0x0013,     // schreiben auf externen Flash
     // Commands from PiBridge master to slave
     eCmdPiIoSetAddress        = 0x0014,     // PiBridge master sends the module address 
