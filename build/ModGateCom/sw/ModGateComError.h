@@ -48,12 +48,12 @@ typedef enum
     // RS485 Command error codes
     MODGATECOM_ERROR_CMD_NOT_SUPPORTED        = 0x37000100, // Unknown RS485 command
     MODGATECOM_ERROR_READ_FW_FLASH            = 0x37000101, // Fehler beim Lesen des FW-Flashs
-    MODGATECOM_ERROR_SERIAL_NUMBER_PROTECTED  = 0x37000102, // Die schon vorhandene Seriennummer darf nicht überschrieben werden
+    MODGATECOM_ERROR_SERIAL_NUMBER_PROTECTED  = 0x37000102, // Die schon vorhandene Seriennummer darf nicht Ã¼berschrieben werden
     MODGATECOM_ERROR_SERIAL_NUMBER_WRITE      = 0x37000103, // Beim Schreiben der Seriennummer ist ein Fehler aufgetreten
-    MODGATECOM_ERROR_ERASE_FW_FLASH           = 0x37000104, // Beim Löschen des Firmware Flashspeichers ist ein Fehler aufgetreten
-    MODGATECOM_ERROR_RESET                    = 0x37000105, // Der Reset konnte nicht ausgeführt werden
+    MODGATECOM_ERROR_ERASE_FW_FLASH           = 0x37000104, // Beim LÃ¶schen des Firmware Flashspeichers ist ein Fehler aufgetreten
+    MODGATECOM_ERROR_RESET                    = 0x37000105, // Der Reset konnte nicht ausgefÃ¼hrt werden
     MODGATECOM_ERROR_UPDATE_MODE              = 0x37000106, // Es kann nicht in den Updatemodus umgeschaltet werden
-    MODGATECOM_ERROR_NO_UPDATE_MODE           = 0x37000107, // Das Kommando darf nur im Updatemodus ausgeführt werden
+    MODGATECOM_ERROR_NO_UPDATE_MODE           = 0x37000107, // Das Kommando darf nur im Updatemodus ausgefÃ¼hrt werden
     MODGATECOM_ERROR_TOO_FEW_FLASH_DATA       = 0x37000108, // Flash Write : Too few data
     MODGATECOM_ERROR_FLASH_WRITE_OUT_OF_RANGE = 0x37000109, // Flash Write : Start address out of range
     MODGATECOM_ERROR_TOO_MANY_FLASH_DATA      = 0x3700010a, // Flash Write : Overflow of allowed area

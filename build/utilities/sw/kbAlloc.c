@@ -190,8 +190,8 @@ void *kbUT_malloc (
 
                         ptMarker_l->ptPrev = ptAct_l;
                         ptAct_l->i32uLen = (INT32U)(((INT8U *)ptAct_l->ptNext - (INT8U *)ptAct_l) - sizeof (kbUT_THeap));
-                        // Falls ptMarker der vorletzte Block ist, schreibe die Größe in den letzten Block
-                        // dann steht im letzten Block die kleinste Größe des noch freien Speichers, bzw. 0
+                        // Falls ptMarker der vorletzte Block ist, schreibe die GrÃ¶ÃŸe in den letzten Block
+                        // dann steht im letzten Block die kleinste GrÃ¶ÃŸe des noch freien Speichers, bzw. 0
                         if (ptMarker_l->ptNext && ptMarker_l->ptNext->ptNext == 0 && ptMarker_l->i32uLen < ptMarker_l->ptNext->i32uLen)
                             ptMarker_l->ptNext->i32uLen = ptMarker_l->i32uLen;
                     }

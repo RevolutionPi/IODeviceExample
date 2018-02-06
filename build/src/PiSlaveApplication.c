@@ -434,7 +434,7 @@ void PiSlaveAppIOReq(SIOGeneric *pReq, SIOGeneric *pResp)
                 pDioResp->i16uOutputStatus = i16uOutputStatus_s;
                 pDioResp->sDioModuleStatus = sDioModuleStatus_s;
                 
-                // es können max. 6 Counterwerte übertragen werden, da das Telegramm max. 31 Byte Nutzdaten haben darf
+                // es kÃ¶nnen max. 6 Counterwerte Ã¼bertragen werden, da das Telegramm max. 31 Byte Nutzdaten haben darf
                 for (i = 0, j = 0; i < 16 && j < 6; i++)
                 {
                     if (ai8uInputMode_s[i] == 1 || ai8uInputMode_s[i] == 2)
@@ -463,7 +463,7 @@ void PiSlaveAppIOReq(SIOGeneric *pReq, SIOGeneric *pResp)
                 ai32uCounterValue_s[i] = 0;
                 ai8uInputMode_s[i] = (pCfgReq->i32uInputMode >> (2 * i)) & 0x03;
                 
-                // inputs mit ungeradem index dürfen kein encoder sein
+                // inputs mit ungeradem index dÃ¼rfen kein encoder sein
                 if ((i % 2) == 1 && ai8uInputMode_s[i] == 3)
                     ai8uInputMode_s[i] = 0;
 

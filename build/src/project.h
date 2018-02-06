@@ -131,7 +131,7 @@ extern "C" {
 #define RS485_STATE_TIMER                   TIM_TIMER1      // Use Timer 1 for mGate RS485 state machine 
 
 // Timer for input and output signals
-#define IO_TIMER_TIME_BASE         1               // Time base in µs
+#define IO_TIMER_TIME_BASE         1               // Time base in Âµs
 #define IO_TIMER_TIME_CYCLE        250             // Cyclic time 
 #define IO_TIMER                   TIM_TIMER3      // Use Timer 3
 
