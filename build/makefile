@@ -2,7 +2,7 @@
 
 BUILD = STM32F205RE_flash.ld
 
-TOOLCHAIN_PATH = /home/md/pi/tools/gcc-arm-none-eabi-6-2017-q2-update/bin
+TOOLCHAIN_PATH = /home/karl/programs/gcc-arm-none-eabi-7-2017-q4-major/bin
 
 CC      = "$(TOOLCHAIN_PATH)/arm-none-eabi-gcc"
 LD      = $(CC)
